@@ -1,0 +1,3 @@
+C:/Users/kachok na masse/source/repos/intern_task/out/build/x64-debug/CMakeFiles/intern_task.dir
+C:/Users/kachok na masse/source/repos/intern_task/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/kachok na masse/source/repos/intern_task/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
