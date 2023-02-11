@@ -1,0 +1,4 @@
+/home/kachok/Develop/intern_two_exe_task/CMakeFiles/first_program_task.dir
+/home/kachok/Develop/intern_two_exe_task/CMakeFiles/second_program_task.dir
+/home/kachok/Develop/intern_two_exe_task/CMakeFiles/edit_cache.dir
+/home/kachok/Develop/intern_two_exe_task/CMakeFiles/rebuild_cache.dir

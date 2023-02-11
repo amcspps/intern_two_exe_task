@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/first_program.dir/first_program/first_program.cpp.o CMakeFiles/first_program.dir/first_program/buffer.cpp.o CMakeFiles/first_program.dir/first_program/reader.cpp.o CMakeFiles/first_program.dir/first_program/writer.cpp.o -o first_program 
