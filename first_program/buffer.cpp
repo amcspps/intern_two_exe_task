@@ -1,6 +1,7 @@
 #include "buffer.h"
 using namespace std;
 
+
 string Buffer::get_data() {
     return _data;
 }

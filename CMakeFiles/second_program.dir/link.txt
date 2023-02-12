@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/second_program.dir/second_program/second_program.cpp.o -o second_program 

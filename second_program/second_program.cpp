@@ -1,10 +1,8 @@
 #include <iostream>
 #include <string>
+#include "receiver.h"
 int main() {
-    int a = 5;
-    std::string buf;
-    std::cin >> buf; 
-    std::cout << "hello" << "second" << std::endl;
-    
+    Receiver receiver;
+    receiver.receive();
     return 0;
 }

@@ -1,8 +1,9 @@
 #pragma once 
+#include <cstring>
 static const unsigned int s_recv_len = 50;
 class Receiver {
 public:
-    Receiver();
+    Receiver() { memset(_recv_buf, '\0',s_recv_len*sizeof(char));};
     void receive();
     void analyze();
     void print(int&& value);

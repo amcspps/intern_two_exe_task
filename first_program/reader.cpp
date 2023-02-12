@@ -5,7 +5,6 @@ using namespace std;
 
 string Reader::read_data() {
     string tmpstr;
-    cout << "enter a string" << endl;
     cin >> tmpstr;
     return tmpstr;
 

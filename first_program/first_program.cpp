@@ -1,15 +1,20 @@
-﻿// intern_task.cpp: определяет точку входа для приложения.
-//
-
-#include "first_program.h"
+﻿#include "first_program.h"
+#include "buffer.h"
+#include "reader.h"
+#include "writer.h"
 #include <string>
+#include <thread>
 using namespace std;
+
 
 int main()
 {	
-	string buf;
-	int a = 0;
-	cin >> buf;
-	cout << "Hello CMake."<< buf << endl;
+	Buffer buffer;
+	Reader reader(buffer);
+	Writer writer(buffer);
+	thread ft(&Reader::run, &reader);
+	thread st(&Writer::process_data, &writer);
+	ft.join();
+	st.join();
 	return 0;
 }

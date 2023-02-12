@@ -7,7 +7,7 @@
 #include <sys/un.h>
 #include <sys/types.h>
 
-static const char* socket_path = "/tmp";
+static const char* socket_path = "/tmp/internsocket";
 static const unsigned int s_send_len = 50;
 
 using namespace std;
@@ -57,13 +57,15 @@ void Writer::transfer(int& sum) {
     cout << "trying to connect to second_program" << endl;
 
     if(connect(sock,(struct sockaddr*)& remote, data_len) == -1) {
-        cout << "connection call failed";
+        cout << "connection call failed" << endl;
+        close(sock);
+    }
+    else {
+        cout << "first_program connected" << endl;
     }
 
-    cout << "first_program connected" << endl;
-
     if(send(sock, send_msg, strlen(send_msg)*sizeof(char), 0) == -1) {
-        cout << "first_program send() call error";
+        cout << "first_program send() call error" << endl;
     }
 
     memset(send_msg,'\0', s_send_len*sizeof(char));

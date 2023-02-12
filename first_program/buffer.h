@@ -4,7 +4,11 @@
 #include <string>
 class Buffer {
 public:
-    Buffer();
+
+    Buffer() = default;
+    Buffer(const Buffer& buffer) = delete;
+    Buffer& operator= (const Buffer&) = delete;
+
     std::string get_data();
     void set_data(std::string data);
     void clear_data();

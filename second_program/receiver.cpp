@@ -8,7 +8,7 @@
 
 using namespace std;
 
-static const char* socket_path = "/tmp";
+static const char* socket_path = "/tmp/internsocket";
 static const unsigned int incoming_connections_num = 5;
 
 void Receiver::receive() {
@@ -18,7 +18,7 @@ void Receiver::receive() {
     int len = 0;
     s = socket(AF_UNIX, SOCK_STREAM, 0);
     if( s == -1) {
-        cout << "socket() call error"; // edit this later
+        cout << "socket() call error"; 
     }
     local.sun_family = AF_UNIX;
     strcpy(local.sun_path, socket_path);
@@ -43,22 +43,19 @@ void Receiver::receive() {
             memset(_recv_buf, '\0',s_recv_len*sizeof(char));
             data_recv = recv(s2, _recv_buf, s_recv_len, 0);
             if(data_recv > 0) {
-                cout << "data received:" << data_recv << "\t" << _recv_buf << endl;
-
-            }
-            else {
-                cout << "error on recv() call" << endl;
+                analyze();
             }
         } while(data_recv > 0);
+        close(s2);
     }
-    close(s2);
+    
 }
 void Receiver::analyze() {
     if(strlen(_recv_buf) > 2 && (atoi(_recv_buf)%32 == 0)) {
         print(atoi(_recv_buf));
     }
     else {
-        cout << "received sum is wrong";
+        cout << "received sum is wrong" << endl;
     }
 }
 void Receiver::print(int&& value) {
