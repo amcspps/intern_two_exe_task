@@ -1,17 +1,19 @@
 #include "reader.h"
 #include <algorithm>
 #include <numeric>
+
 using namespace std;
 
 string Reader::read_data() {
     string tmpstr;
     cin >> tmpstr;
     return tmpstr;
-
 }
+
 bool Reader::check(string& tmpstr) {
     return tmpstr.length() <= 64 && std::all_of(tmpstr.begin(), tmpstr.end(), [](char c) {return std::isdigit(c);});
 }
+
 string Reader::sort_replace(string& tmpstr) {
     sort(tmpstr.begin(),tmpstr.end(), greater<char>());
     string ret = accumulate(tmpstr.begin(),tmpstr.end(),string{""},[](string left, char r) {
@@ -23,6 +25,7 @@ string Reader::sort_replace(string& tmpstr) {
     });
     return ret;
 }
+
 void Reader::run(){
     while(true) {
         string input = read_data();

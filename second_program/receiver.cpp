@@ -1,6 +1,5 @@
 #include "receiver.h"
 #include <iostream>
-
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/un.h>
@@ -50,6 +49,7 @@ void Receiver::receive() {
     }
     
 }
+
 void Receiver::analyze() {
     if(strlen(_recv_buf) > 2 && (atoi(_recv_buf)%32 == 0)) {
         print(atoi(_recv_buf));
@@ -58,6 +58,7 @@ void Receiver::analyze() {
         cout << "received sum is wrong" << endl;
     }
 }
+
 void Receiver::print(int&& value) {
     cout << "received sum is: "<< value << endl;
 }

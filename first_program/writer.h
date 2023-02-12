@@ -1,6 +1,7 @@
 #pragma once
 #include "buffer.h"
 #include <string>
+
 class Writer {
 public:
     Writer(Buffer& buffer):_buffer(buffer) {};

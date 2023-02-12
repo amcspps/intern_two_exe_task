@@ -1,11 +1,10 @@
-﻿#include "first_program.h"
-#include "buffer.h"
+﻿#include "buffer.h"
 #include "reader.h"
 #include "writer.h"
 #include <string>
 #include <thread>
-using namespace std;
 
+using namespace std;
 
 int main()
 {	
